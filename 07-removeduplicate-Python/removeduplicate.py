@@ -4,5 +4,8 @@
 # The second or further occurrence of duplicate should be removed.
 
 def removeduplicate(text):
-	# Your code goes here
-	pass
+	st=""
+	for i in text:
+		if i not in st:
+			st+=i
+    	return st
