@@ -5,6 +5,11 @@
 
 
 def fun_kth_occurrences(s, n):
-	return 'a'
+	di={}
+	l=list(s)
+        for i in l:
+                di[i]=l.count(i)
+        a = sorted(di.items(), key=lambda x: x[1],reverse=True)  
+        return a[n-1][0]
 
 
