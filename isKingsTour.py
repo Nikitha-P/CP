@@ -19,5 +19,27 @@
 # and False otherwise.
 
 def isKingsTour(board):
+    def position(L,value):
+    k=0
+    for i in L:
+        for j in range(len(i)):
+            if i[j]==value:
+                posi=[k,j]
+        k+=1
+    return posi
+def isKingsTour(board):
+    for i in board:
+        for j in range(len(i)):
+            if i[j] not in range(1,len(board)**2+1):
+                return False
+    for i in range(1,len(board)**2):
+        x=position(board,i)
+        y=position(board,i+1)
+        if abs(x[0]-y[0])==1 or abs(x[1]-y[1])==1:
+            continue
+        else:
+            return False
+    else:
+        return True
     # Your code goes here...
-    pass
+    #pass
