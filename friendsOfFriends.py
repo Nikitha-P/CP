@@ -26,4 +26,12 @@ Thus, in this example, friendsOfFriends should return:
 
 def friendsOfFriends(d):
     # Your code goes here...
-    return None
+    x=dict()
+    for i in d:
+        x[i]=set()
+        for j in d[i]:
+            if j in d:
+                x[i].update(d[j]-d[i])
+        x[i]=x[i]-set([i])
+    d=x
+    return d
