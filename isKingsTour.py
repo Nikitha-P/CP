@@ -18,8 +18,7 @@
 # returns True if it represents a legal Kings Tour 
 # and False otherwise.
 
-def isKingsTour(board):
-    def position(L,value):
+def position(L,value):
     k=0
     for i in L:
         for j in range(len(i)):
