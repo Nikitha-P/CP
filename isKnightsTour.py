@@ -29,9 +29,30 @@
 # assert(isKnightsTour(board)==True)
 
 
+    
+def position(L,value):
+    k=0
+    for i in L:
+        for j in range(len(i)):
+            if i[j]==value:
+                posi=[k,j]
+        k+=1
+    return posi
 def isKnightsTour(board):
     # Your code goes here...
-    pass
+    for i in board:
+        for j in range(len(i)):
+            if i[j] not in range(1,len(board)*len(board[0])+1):
+                return False
+    for i in range(1,len(board)*len(board[0])):
+        x=position(board,i)
+        y=position(board,i+1)
+        if abs(x[0]-y[0])+abs(x[1]-y[1])==3:
+            continue
+        else:
+            return False
+    else:
+        return True
 
 board = [
             [  1, 60, 39, 34, 31, 18,  9, 64 ],
